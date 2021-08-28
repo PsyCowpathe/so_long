@@ -6,15 +6,15 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:37:36 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 18:33:45 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/08/28 19:12:42 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx/mlx.h"
-# include "libft/libft.h"
+# include "../dependency/mlx/mlx.h"
+# include "../dependency/libft/libft.h"
 # include <stdlib.h>
 # include <fcntl.h>
 # define WIN_X 1920
@@ -40,7 +40,7 @@
 # define KEY_W 13
 # define KEY_ECHAP 53
 
-typedef enum	e_error
+typedef enum e_error
 {
 	WIN_ERROR = 1,
 	IMG_ERROR = 2,
@@ -63,7 +63,7 @@ typedef struct s_xpm
 	int		height;
 }				t_xpm;
 
-typedef struct	s_mlx
+typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
@@ -101,7 +101,6 @@ void	physics(t_mlx *data);
 
 //physics_utility
 
-
 void	collectible(t_mlx *data);
 void	new_dimension(t_mlx *data);
 void	hit_box(t_mlx *data);
@@ -125,7 +124,7 @@ int		keyrelease(int key, t_mlx *data);
 
 int		exit_game(t_mlx *data, int phase);
 void	init_struct(t_mlx *data);
-int	nb_len(unsigned int nb);
+int		nb_len(unsigned int nb);
 
 //mlx_utility
 
@@ -143,13 +142,12 @@ int		parsing(t_mlx *data);
 
 //parsing_utility
 
-
 int		get_map_data(t_mlx *data, int *player, int *nimbus, int *end);
 void	clean_map(t_mlx *data);
 void	get_player_pos(t_mlx *data);
 
 //error
 
-int	error(int number);
+int		error(int number);
 
 #endif

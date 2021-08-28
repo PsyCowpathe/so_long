@@ -6,7 +6,7 @@
 #    By: agirona <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/26 16:22:31 by agirona           #+#    #+#              #
-#    Updated: 2021/08/28 17:31:13 by agirona          ###   ########lyon.fr    #
+#    Updated: 2021/08/28 20:12:06 by agirona          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ OBJS	= $(SRCS:.c=.o)
 
 INC		= .
 
-CFLAGS	= -Wall -Wextra -Werror -I $(INC) -c
+CFLAGS	= -Wall -Wextra -Werror -I $(INC)
 
-%.o: %.c $(INC)
+%.o: %.c $(INC)/libft.h
 	gcc $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
