@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:59:41 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:18:19 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 20:02:15 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	secondary_error(int number)
 		ft_putstr("There can be only one and unique Mr Nimbus !");
 	else if (number == MALLOC_ERROR)
 		ft_putstr("Malloc failed. :(");
+	else if (number == CHAR_ERROR)
+		ft_putstr("Invalid character in the map !");
 }
 
 int	error(int number)
@@ -47,8 +49,9 @@ int	error(int number)
 	}
 	else if (number == RECT_ERROR)
 		ft_putstr("The map is not a rectangle !");
-	else if (number == CHAR_ERROR)
-		ft_putstr("Invalid character in the map !");
+	else if (number == MULT_ERROR)
+		ft_putstr("Sorry but this game doesnt support multiplayer =) \
+		\nPlease set only one spawn point.");
 	else
 		secondary_error(number);
 	return (0);

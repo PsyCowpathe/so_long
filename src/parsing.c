@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 23:49:19 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:19:36 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 21:33:20 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ int	verif_char(t_mlx *data, int player, int end, int nimbus)
 {
 	if (end == 0)
 		return (error(END_ERROR));
-	if (player != 1)
+	if (player < 1)
 		return (error(SPAWN_ERROR));
+	if (player > 1)
+		return (error(MULT_ERROR));
 	if (data->collectible == 0)
 		return (error(COLLECT_ERROR));
 	if (nimbus > 1)
@@ -59,12 +61,12 @@ int	parsing(t_mlx *data)
 	player = 0;
 	end = 0;
 	nimbus = 0;
+	get_player_pos(data);
 	get_map_data(data, &player, &nimbus, &end);
 	if (verif_char(data, player, end, nimbus) == 0)
 		return (0);
 	if (spam_fill(data, data->map, data->px, data->py) == 0)
 		return (error(CLOSE_ERROR));
 	clean_map(data);
-	get_player_pos(data);
 	return (1);
 }

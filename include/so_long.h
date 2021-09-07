@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:37:36 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:12:42 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 19:51:04 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ typedef enum e_error
 	COLLECT_ERROR = 9,
 	CLOSE_ERROR = 10,
 	NIMB_ERROR = 11,
-	MALLOC_ERROR = 12
+	MALLOC_ERROR = 12,
+	MULT_ERROR = 13
 }				t_error;
 
 typedef struct s_xpm

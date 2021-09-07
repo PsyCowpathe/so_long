@@ -6,7 +6,7 @@
 #    By: agirona <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:34:20 by agirona           #+#    #+#              #
-#    Updated: 2021/08/28 20:34:16 by agirona          ###   ########lyon.fr    #
+#    Updated: 2021/09/07 21:42:30 by agirona          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ lib:
 			$(MAKE) ./dependency/libft/
 			$(MAKE) ./dependency/mlx/
 
-$(NAME) :	$(OBJS_PATH)
+$(NAME) :	$(LIBRARY) $(OBJS_PATH)
 			gcc $(FRAMEWORK) $(OBJS_PATH) $(LIBRARY) -o $(NAME)
 
 create_obj_dir :
@@ -56,8 +56,9 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
+			rm -rf obj
 			$(MAKE) ./dependency/libft fclean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re lib create_obj_dir
+.PHONY:		all lib create_obj_dir clean fclean re

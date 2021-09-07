@@ -6,13 +6,13 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:57:09 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 20:20:44 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 18:56:42 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int		keypress(int key, t_mlx *data)
+int	keypress(int key, t_mlx *data)
 {
 	if (key == KEY_W)
 		data->forward = 1;
@@ -27,7 +27,7 @@ int		keypress(int key, t_mlx *data)
 	return (1);
 }
 
-int		keyrelease(int key, t_mlx *data)
+int	keyrelease(int key, t_mlx *data)
 {
 	if (key == KEY_W)
 		data->forward = 0;
@@ -39,5 +39,3 @@ int		keyrelease(int key, t_mlx *data)
 		data->backward = 0;
 	return (1);
 }
-
-
