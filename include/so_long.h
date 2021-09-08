@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:37:36 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/07 19:51:04 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 20:14:10 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	print_map(t_mlx *d);
 
 //enemy
 
-void	moov_enemy(t_mlx *data);
+void	enemy_and_collectible(t_mlx *data);
 void	mr_nimbus(t_mlx *d, int x, int y);
 
 //event

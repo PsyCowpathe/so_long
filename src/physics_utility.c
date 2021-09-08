@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:08:44 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:20:07 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 20:14:09 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	collectible(t_mlx *data)
 			data->frame = 5;
 		else
 			data->frame = 8;
-		data->collectible--;
 	}	
 }
 

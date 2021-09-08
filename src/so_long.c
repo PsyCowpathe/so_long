@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:25:57 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:20:27 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 20:14:08 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	refresh(t_mlx *data)
 	clear_window(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	physics(data);
-	moov_enemy(data);
+	enemy_and_collectible(data);
 	print_map(data);
 	data->time++;
 	if (data->count != save)

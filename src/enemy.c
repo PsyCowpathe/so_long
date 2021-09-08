@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:14:06 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:18:11 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 20:14:08 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,20 @@ void	moov_nimbus(t_mlx *d, int y, int *x)
 	}
 }
 
-void	moov_enemy(t_mlx *data)
+void	enemy_and_collectible(t_mlx *data)
 {
 	int		y;
 	int		x;
 
 	y = 0;
+	data->collectible = 0;
 	while (y < data->mapy)
 	{
 		x = 0;
 		while (x < data->mapx)
 		{
+			if (data->map[y][x] == 'C')
+				data->collectible++;
 			if (data->map[y][x] == 'N' && data->time % 3 == 0)
 				moov_nimbus(data, y, &x);
 			x++;
