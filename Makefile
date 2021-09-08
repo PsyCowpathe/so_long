@@ -6,7 +6,7 @@
 #    By: agirona <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:34:20 by agirona           #+#    #+#              #
-#    Updated: 2021/09/07 21:49:38 by agirona          ###   ########lyon.fr    #
+#    Updated: 2021/09/08 21:04:21 by agirona          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ $(NAME) :	$(LIBRARY) $(OBJS_PATH)
 			gcc $(FRAMEWORK) $(OBJS_PATH) $(LIBRARY) -o $(NAME)
 
 create_obj_dir :
+			rm -f obj || true
 			mkdir -p obj
 
 clean:
