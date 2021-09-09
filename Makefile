@@ -6,7 +6,7 @@
 #    By: agirona <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:34:20 by agirona           #+#    #+#              #
-#    Updated: 2021/09/08 21:04:21 by agirona          ###   ########lyon.fr    #
+#    Updated: 2021/09/09 22:52:41 by agirona          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,24 +26,22 @@ OBJS_PATH = $(addprefix $(OBJS_DIR)/, $(OBJS))
 
 INC	= include
 
-MAKE = make -C
-
 LIBRARY = dependency/libft/libft.a dependency/mlx/libmlx.a
 
 FRAMEWORK = -framework OpenGL -framework Appkit
 
 CFLAGS	= -Wall -Wextra -Werror -I $(INC)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(INC)/so_long.h
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(INC)/so_long.h $(LIBRARY)
 	gcc $(CFLAGS) -c $< -o $@
 
 all: create_obj_dir lib $(NAME)
 
 lib:
-			$(MAKE) ./dependency/libft/
-			$(MAKE) ./dependency/mlx/
+			make -C ./dependency/libft/
+			make -C ./dependency/mlx/
 
-$(NAME) :	$(LIBRARY) $(OBJS_PATH)
+$(NAME) :	$(OBJS_PATH)
 			gcc $(FRAMEWORK) $(OBJS_PATH) $(LIBRARY) -o $(NAME)
 
 create_obj_dir :
@@ -52,13 +50,13 @@ create_obj_dir :
 
 clean:
 			rm -f $(OBJS_PATH)
-			$(MAKE) ./dependency/libft clean
-			$(MAKE) ./dependency/mlx clean
+			make -C ./dependency/libft clean
+			make -C ./dependency/mlx clean
 
 fclean:		clean
 			rm -f $(NAME)
 			rm -rf obj
-			$(MAKE) ./dependency/libft fclean
+			make -C ./dependency/libft fclean
 
 re:			fclean all
 
