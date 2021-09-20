@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 23:49:19 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/07 21:33:20 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 16:47:29 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int	parsing(t_mlx *data)
 	end = 0;
 	nimbus = 0;
 	get_player_pos(data);
-	get_map_data(data, &player, &nimbus, &end);
+	if (get_map_data(data, &player, &nimbus, &end) == 0)
+		return (0);
 	if (verif_char(data, player, end, nimbus) == 0)
 		return (0);
 	if (spam_fill(data, data->map, data->px, data->py) == 0)

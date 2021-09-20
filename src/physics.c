@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:01:01 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/08 20:14:09 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 20:13:44 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,40 @@ void	gravity(t_mlx *data)
 		else if (data->py > 0 && data->map[data->py - 2][data->px] == '1')
 			data->jump = 6;
 		if (data->jump > 5)
-		{
-			data->count++;
+		{	
+			if (++data->count != 1)
+				ft_putchar(' ');
+			ft_putnbr(data->count);
 			data->jump = 0;
 			data->endjump = 1;
 		}
 	}
 }
 
-void	moov(t_mlx *data)
+void	moov(t_mlx *data, int savex, int savey)
 {
 	if (data->endjump == 1 && data->backward == 1 && data->py + 3 < data->mapy
 		&& data->map[data->py + 1][data->px] == '1'
 		&& ft_ischar("0CE", data->map[data->py + 2][data->px]) == 1
 		&& ft_ischar("0CE", data->map[data->py + 3][data->px]) == 1)
-	{
 		data->py += 2;
-		data->count++;
-	}
 	if (data->left == 1 && data->map[data->py][data->px - 1] != '1'
-	&& data->map[data->py - 1][data->px - 1] != '1' && ++data->count)
+	&& data->map[data->py - 1][data->px - 1] != '1')
 	{
 		data->direction = 1;
 		data->px -= 1;
 	}
 	if (data->right == 1 && data->map[data->py][data->px + 1] != '1'
-		&& data->map[data->py - 1][data->px + 1] != '1' && ++data->count)
+		&& data->map[data->py - 1][data->px + 1] != '1')
 	{
 		data->direction = 0;
 		data->px += 1;
+	}
+	if (savex != data->px || savey != data->py)
+	{	
+		if (++data->count != 1)
+			ft_putchar(' ');
+		ft_putnbr(data->count);
 	}
 }
 
@@ -69,6 +74,6 @@ void	physics(t_mlx *data)
 	hit_box(data);
 	new_dimension(data);
 	gravity(data);
-	moov(data);
+	moov(data, data->px, data->py);
 	collectible(data);
 }
