@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:25:57 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/20 20:13:45 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:22:36 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	refresh(t_mlx *data)
 	if (data->time == 10)
 		data->time = 0;
 	if (data->count >= 1000000)
-		exit_game(data, 1);
+		exit_game(data);
 	return (1);
 }
 
@@ -35,16 +35,17 @@ int	main(int argc, char **argv)
 		return (error(ARG_ERROR));
 	init_struct(&data);
 	if (init_mlx(&data) == 0)
-		exit_game(&data, 0);
+		exit_game(&data);
 	if (init_texture(&data) == 0)
-		exit_game(&data, 0);
+		exit_game(&data);
+	data.phase = 1;
 	if (get_map(&data, argv[1]) == 0)
-		exit_game(&data, 1);
+		exit_game(&data);
 	if (parsing(&data) != 1)
-		exit_game(&data, 1);
+		exit_game(&data);
 	mlx_hook(data.win, 2, 1L << 0, keypress, &data);
 	mlx_hook(data.win, 3, 1L << 1, keyrelease, &data);
-	mlx_hook(data.win, 17, (1L << 17), exit_game, NULL);
+	mlx_hook(data.win, 17, (1L << 17), exit_game, &data);
 	mlx_loop_hook(data.mlx, &refresh, &data);
 	mlx_loop(data.mlx);
 	return (1);

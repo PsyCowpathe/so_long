@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:57:09 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/08 20:14:10 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:22:34 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	keypress(int key, t_mlx *data)
 	if (key == KEY_S)
 		data->backward = 1;
 	if (key == KEY_ECHAP)
-		exit_game(data, 1);
+		exit_game(data);
 	return (1);
 }
 

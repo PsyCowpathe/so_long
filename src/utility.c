@@ -6,13 +6,13 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:58:05 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/20 19:54:15 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:45:36 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	exit_game(t_mlx *data, int phase)
+int	exit_game(t_mlx *data)
 {
 	int		i;
 
@@ -24,13 +24,13 @@ int	exit_game(t_mlx *data, int phase)
 		free(data->map);
 	}
 	i = 0;
-	while (phase >= 1 && i < 15)
+	while (data->phase >= 1 && i < 15)
 	{
 		if (data->xpm[i].img != NULL)
 			mlx_destroy_image(data->mlx, data->xpm[i].img);
 		i++;
 	}
-	if (phase >= 1)
+	if (data->phase >= 1)
 	{
 		mlx_destroy_image(data->mlx, data->img);
 		mlx_destroy_window(data->mlx, data->win);
@@ -69,4 +69,5 @@ void	init_struct(t_mlx *data)
 	data->nimbus = 0;
 	data->stuck = 0;
 	data->time = 0;
+	data->phase = 0;
 }

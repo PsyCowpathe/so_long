@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:37:36 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/08 20:14:10 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:22:35 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ typedef struct s_mlx
 	int		nimbus_frame;
 	int		stuck;
 	int		time;
+	int		phase;
 	t_xpm	xpm[15];
 }				t_mlx;
 
@@ -123,7 +124,7 @@ int		keyrelease(int key, t_mlx *data);
 
 //utility
 
-int		exit_game(t_mlx *data, int phase);
+int		exit_game(t_mlx *data);
 void	init_struct(t_mlx *data);
 int		nb_len(unsigned int nb);
 
