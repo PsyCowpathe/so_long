@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:59:41 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/07 20:02:15 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/22 18:21:44 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	secondary_error(int number)
 		ft_putstr("Malloc failed. :(");
 	else if (number == CHAR_ERROR)
 		ft_putstr("Invalid character in the map !");
+	else if (number == NO_MAP)
+		ft_putstr("There is no map.");
 }
 
 int	error(int number)

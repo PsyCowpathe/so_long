@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:10:13 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/08 22:10:45 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/22 18:58:16 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	get_map_size(t_mlx *data, int fd)
 		free(tmp);
 		data->mapy++;
 	}
+	if (tmp && tmp[0] != '\0' && ++data->mapy)
+		data->mapx = ft_strlen(tmp);
 	free(tmp);
 	close(fd);
 	return (1);
@@ -59,6 +61,8 @@ int	collect_map(t_mlx *data, int fd)
 		}
 		i++;
 	}
+	if (tmp && tmp[0] != '\0')
+		data->map[i] = ft_strdup(tmp);
 	free(tmp);
 	return (1);
 }
@@ -72,6 +76,10 @@ int	get_map(t_mlx *data, char *str)
 	{
 		close(fd);
 		return (0);
+	}
+	if (data->mapy == 0)
+	{
+		return (error(NO_MAP));
 	}
 	close(fd);
 	fd = open(str, O_RDONLY);

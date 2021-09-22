@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:08:44 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/21 15:44:46 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/22 18:56:13 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,15 @@ void	new_dimension(t_mlx *data)
 {
 	if (data->collectible == 0 && (data->map[data->py][data->px] == 'E'
 		|| data->map[data->py - 1][data->px] == 'E'))
+	{
+		if (data->endjump == 0)
+		{
+			if (++data->count != 1)
+				ft_putchar(' ');
+			ft_putnbr(data->count);
+		}
 		exit_game(data);
+	}
 }
 
 int	choose_walk_frame(t_mlx *data)
