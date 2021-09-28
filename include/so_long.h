@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:37:36 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/22 18:56:17 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 17:21:08 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ typedef struct s_mlx
 	int		mapy;
 	int		px;
 	int		py;
-	int		forward;
+	int		up;
 	int		right;
 	int		left;
 	int		backward;

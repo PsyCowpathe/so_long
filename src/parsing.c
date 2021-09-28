@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 23:49:19 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/22 18:56:19 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 15:50:00 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ void	no_glitch(t_mlx *data)
 		{
 			if (data->map[y][x] == '0')
 				data->map[y][x] = 'X';
+			if (data->map[y][x] == 'C')
+				data->map[y][x] = 'Y';
+			if (data->map[y][x] == 'E')
+				data->map[y][x] = 'Z';
+			if (data->map[y][x] == 'N')
+				data->map[y][x] = 'A';
 			x++;
 		}
 		y++;

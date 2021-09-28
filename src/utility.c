@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:58:05 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/22 18:56:12 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 17:21:09 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	nb_len(unsigned int nb)
 void	init_struct(t_mlx *data)
 {
 	data->map = NULL;
-	data->forward = 0;
+	data->up = 0;
 	data->right = 0;
 	data->left = 0;
 	data->backward = 0;

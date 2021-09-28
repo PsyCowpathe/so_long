@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:08:44 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/22 18:56:13 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 17:21:10 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	new_dimension(t_mlx *data)
 
 int	choose_walk_frame(t_mlx *data)
 {
-	if (data->forward == 1 || data->backward == 1
+	if (data->up == 1 || data->backward == 1
 		|| data->left == 1 || data->right == 1)
 	{
 		if (data->time % 2 != 0)

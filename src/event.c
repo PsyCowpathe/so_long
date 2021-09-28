@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:57:09 by agirona           #+#    #+#             */
-/*   Updated: 2021/09/21 15:22:34 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 17:21:10 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	keypress(int key, t_mlx *data)
 {
 	if (key == KEY_W)
-		data->forward = 1;
+		data->up = 1;
 	if (key == KEY_D)
 		data->right = 1;
 	if (key == KEY_A)
@@ -30,7 +30,7 @@ int	keypress(int key, t_mlx *data)
 int	keyrelease(int key, t_mlx *data)
 {
 	if (key == KEY_W)
-		data->forward = 0;
+		data->up = 0;
 	if (key == KEY_D)
 		data->right = 0;
 	if (key == KEY_A)

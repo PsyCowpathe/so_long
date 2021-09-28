@@ -6,7 +6,7 @@
 /*   By: agirona <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:39:33 by agirona           #+#    #+#             */
-/*   Updated: 2021/08/28 19:20:14 by agirona          ###   ########lyon.fr   */
+/*   Updated: 2021/09/28 17:01:18 by agirona          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	print_portal(t_mlx *d)
 		while (x < d->px + 15 && x < d->mapx)
 		{
 			xc = (WIN_X * 0.5) - 64 * (d->px - x);
-			if (d->map[y][x] == 'E')
+			if (d->map[y][x] == 'E' || d->map[y][x] == 'Z')
 				mlx_put_image_to_window(d->mlx, d->win, d->xpm[3].img, xc, yc);
-			if (d->map[y][x] == 'N')
+			if (d->map[y][x] == 'N' || d->map[y][x] == 'A')
 				mr_nimbus(d, x, y);
 			x++;
 		}
@@ -89,7 +89,7 @@ void	print_map(t_mlx *d)
 				mlx_put_image_to_window(d->mlx, d->win, d->xpm[1].img, xc, yc);
 			else
 				mlx_put_image_to_window(d->mlx, d->win, d->xpm[0].img, xc, yc);
-			if (d->map[y][x] == 'C')
+			if (d->map[y][x] == 'C' || d->map[y][x] == 'Y')
 				mlx_put_image_to_window(d->mlx, d->win, d->xpm[2].img, xc, yc);
 		}
 	}
